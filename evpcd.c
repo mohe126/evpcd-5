@@ -637,11 +637,13 @@ void evpcd_isa_jmpct(){
     if(evpcd_cpu_f_condition_met){
         evpcd_isa_jmp(); //Just call jump if condition met
     }
+    evpcd_mem_fetch8();
 }
 void evpcd_isa_jmpcf(){
     if(!evpcd_cpu_f_condition_met){
         evpcd_isa_jmp();
     }    
+    evpcd_mem_fetch8();
 }
 
 void evpcd_isa_add(){
@@ -1013,11 +1015,13 @@ void evpcd_isa_jmpcti(){
     if(evpcd_cpu_f_condition_met){
         evpcd_isa_jmpi(); //Just call jump if condition met
     }
+    evpcd_mem_fetch32();
 }
 void evpcd_isa_jmpcfi(){
     if(!evpcd_cpu_f_condition_met){
         evpcd_isa_jmpi();
-    }    
+    }
+    evpcd_mem_fetch32();
 }
 
 void evpcd_isa_addi(){
@@ -1259,6 +1263,7 @@ uint8_t evpcd_isa_exec(){
 
     return opcode;
 }
+
 
 
 

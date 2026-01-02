@@ -578,51 +578,51 @@ void evpcd_isa_cmp(){
     uint8_t result = 0;
 
     switch(mode){
-        default: break;
+        default: result = 0; break;
         //[[ copied from evpcd2 line by line ]]
-        case 0: if(val1 == 0){result = 1; break;}
-        case 1: if(val2 == 0){result = 1; break;}
-        case 2: if((int32_t)val1 < 0){result = 1; break;}
-        case 3: if((int32_t)val2 < 0){result = 1; break;}
-        case 4: if(val1 == 0 && val2 == 0){result = 1; break;}
-        case 5: if(val1 == val2){result = 1; break;}
+        case 0: if(val1 == 0){result = 1;} break;
+        case 1: if(val2 == 0){result = 1;} break;
+        case 2: if((int32_t)val1 < 0){result = 1;} break;
+        case 3: if((int32_t)val2 < 0){result = 1;} break;
+        case 4: if(val1 == 0 && val2 == 0){result = 1;} break;
+        case 5: if(val1 == val2){result = 1;} break;
 
-        case 6: if(val1 > val2){result = 1; break;}
-        case 7: if(val1 >= val2){result = 1; break;}
-        case 8: if((int32_t)val1 > (int32_t)val2){result = 1; break;}
-        case 9: if((int32_t)val1 >= (int32_t)val2){result = 1; break;}
+        case 6: if(val1 > val2){result = 1;} break;
+        case 7: if(val1 >= val2){result = 1;} break;
+        case 8: if((int32_t)val1 > (int32_t)val2){result = 1;} break;
+        case 9: if((int32_t)val1 >= (int32_t)val2){result = 1;} break;
 
-        case 10: if(val1 < val2){result = 1; break;}
-        case 11: if(val1 <= val2){result = 1; break;}
+        case 10: if(val1 < val2){result = 1;} break;
+        case 11: if(val1 <= val2){result = 1;} break;
 
-        case 12: if((int32_t)val1 < (int32_t)val2){result = 1; break;}
-        case 13: if((int32_t)val1 <= (int32_t)val2){result = 1; break;}
+        case 12: if((int32_t)val1 < (int32_t)val2){result = 1;} break;
+        case 13: if((int32_t)val1 <= (int32_t)val2){result = 1;} break;
 
-        case 14: if(val1 != val2){result = 1; break;}
+        case 14: if(val1 != val2){result = 1;} break;
 
-        case 15: if(val1 && val2){result = 1; break;}
-        case 16: if(val1 || val2){result = 1; break;}
+        case 15: if(val1 && val2){result = 1;} break;
+        case 16: if(val1 || val2){result = 1;} break;
 
-        case 17: if(val1 != 0){result = 1; break;}
-        case 18: if(val2 != 0){result = 1; break;}
+        case 17: if(val1 != 0){result = 1;} break;
+        case 18: if(val2 != 0){result = 1;} break;
 
         //[[ added segment ]]
 
         //essentially, here we treat the second arg as an imm, not a register
-        case 19: if(val1 == reg2){result = 1; break;}
-        case 20: if(val1 != reg2){result = 1; break;}
+        case 19: if(val1 == reg2){result = 1;} break;
+        case 20: if(val1 != reg2){result = 1;} break;
 
-        case 21: if(val1 > reg2){result = 1; break;}
-        case 22: if(val1 >= reg2){result = 1; break;}
+        case 21: if(val1 > reg2){result = 1;} break;
+        case 22: if(val1 >= reg2){result = 1;} break;
 
-        case 23: if((int32_t)val1 > (int32_t)reg2){result = 1; break;}
-        case 24: if((int32_t)val1 >= (int32_t)reg2){result = 1; break;}
+        case 23: if((int32_t)val1 > (int32_t)reg2){result = 1;} break;
+        case 24: if((int32_t)val1 >= (int32_t)reg2){result = 1;} break;
 
-        case 25: if(val1 < reg2){result = 1; break;}
-        case 26: if(val1 <= reg2){result = 1; break;}
+        case 25: if(val1 < reg2){result = 1;} break;
+        case 26: if(val1 <= reg2){result = 1;} break;
 
-        case 27: if((int32_t)val1 < (int32_t)reg2){result = 1; break;}
-        case 28: if((int32_t)val1 <= (int32_t)reg2){result = 1; break;}
+        case 27: if((int32_t)val1 < (int32_t)reg2){result = 1;} break;
+        case 28: if((int32_t)val1 <= (int32_t)reg2){result = 1;} break;
     }
 
     evpcd_cpu_f_condition_met = result;
@@ -642,7 +642,7 @@ void evpcd_isa_jmpct(){
 void evpcd_isa_jmpcf(){
     if(!evpcd_cpu_f_condition_met){
         evpcd_isa_jmp();
-    }    
+    }
     evpcd_mem_fetch8();
 }
 
@@ -977,31 +977,31 @@ void evpcd_isa_cmpi(){
     switch(mode){
         default: break;
         //[[ copied from evpcd2 line by line ]]
-        case 0: if(val1 == 0){result = 1; break;}
-        case 1: if(val2 == 0){result = 1; break;}
-        case 2: if((int32_t)val1 < 0){result = 1; break;}
-        case 3: if((int32_t)val2 < 0){result = 1; break;}
-        case 4: if(val1 == 0 && val2 == 0){result = 1; break;}
-        case 5: if(val1 == val2){result = 1; break;}
+        case 0: if(val1 == 0){result = 1;} break;
+        case 1: if(val2 == 0){result = 1;} break;
+        case 2: if((int32_t)val1 < 0){result = 1;} break;
+        case 3: if((int32_t)val2 < 0){result = 1;} break;
+        case 4: if(val1 == 0 && val2 == 0){result = 1;} break;
+        case 5: if(val1 == val2){result = 1;} break;
 
-        case 6: if(val1 > val2){result = 1; break;}
-        case 7: if(val1 >= val2){result = 1; break;}
-        case 8: if((int32_t)val1 > (int32_t)val2){result = 1; break;}
-        case 9: if((int32_t)val1 >= (int32_t)val2){result = 1; break;}
+        case 6: if(val1 > val2){result = 1;} break;
+        case 7: if(val1 >= val2){result = 1;} break;
+        case 8: if((int32_t)val1 > (int32_t)val2){result = 1;} break;
+        case 9: if((int32_t)val1 >= (int32_t)val2){result = 1;} break;
 
-        case 10: if(val1 < val2){result = 1; break;}
-        case 11: if(val1 <= val2){result = 1; break;}
+        case 10: if(val1 < val2){result = 1;} break;
+        case 11: if(val1 <= val2){result = 1;} break;
 
-        case 12: if((int32_t)val1 < (int32_t)val2){result = 1; break;}
-        case 13: if((int32_t)val1 <= (int32_t)val2){result = 1; break;}
+        case 12: if((int32_t)val1 < (int32_t)val2){result = 1;} break;
+        case 13: if((int32_t)val1 <= (int32_t)val2){result = 1;} break;
 
-        case 14: if(val1 != val2){result = 1; break;}
+        case 14: if(val1 != val2){result = 1;} break;
 
-        case 15: if(val1 && val2){result = 1; break;}
-        case 16: if(val1 || val2){result = 1; break;}
+        case 15: if(val1 && val2){result = 1;} break;
+        case 16: if(val1 || val2){result = 1;} break;
 
-        case 17: if(val1 != 0){result = 1; break;}
-        case 18: if(val2 != 0){result = 1; break;}
+        case 17: if(val1 != 0){result = 1;} break;
+        case 18: if(val2 != 0){result = 1;} break;
 
     }
 
@@ -1015,7 +1015,7 @@ void evpcd_isa_jmpcti(){
     if(evpcd_cpu_f_condition_met){
         evpcd_isa_jmpi(); //Just call jump if condition met
     }
-    evpcd_mem_fetch32();
+    evpcd_mem_fetch32(); //Fetch without doing anything otherwise
 }
 void evpcd_isa_jmpcfi(){
     if(!evpcd_cpu_f_condition_met){
@@ -1263,7 +1263,6 @@ uint8_t evpcd_isa_exec(){
 
     return opcode;
 }
-
 
 
 
